@@ -1,0 +1,16 @@
+{
+  "name": "@irango/api-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "implicitDependencies": ["@irango/api"],
+  "targets": {
+    "e2e": {
+      "command": "jest --passWithNoTests",
+      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "dependsOn": ["@irango/api:build", "@irango/api:serve"],
+      "options": {
+        "cwd": "packages/api-e2e"
+      }
+    }
+  }
+}
